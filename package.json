@@ -6,7 +6,7 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "watch": "eleventy --watch",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/pratherpaint/"
+    "build-ghpages": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
