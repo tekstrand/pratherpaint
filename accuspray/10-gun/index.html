@@ -1,0 +1,42 @@
+---
+layout: base.html
+title: Accuspray 10 Gun | Prather Paint
+description: This is the meta description
+product: 10 Gun
+price: $265.00
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/10-gun.jpg" class="pull-left" alt="Accuspray 10 Gun" />
+		<p>Designed for professionals who demand the highest finish quality, speed, and savings. The 10-Gun features a low-pressure inlet (less than 10 psi.) that accommodates either compressed air or turbine applications.</p>
+		<p>Includes:</p>
+		<ul>
+			<li>Your Choice of needle size</li>
+			<li>Your Choice of Air Cap size</li>
+			<li>Aluminum Air Cap Free Upgrade</li>
+			<li>Stainless Steel Fluid Passage</li>
+			<li>1/2-pint and 1-quart Cups available upon request</li>
+			<li>Our Most Popular Gun!</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+

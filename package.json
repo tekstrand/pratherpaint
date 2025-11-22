@@ -1,0 +1,17 @@
+{
+  "name": "pratherpaint",
+  "version": "1.0.0",
+  "description": "Prather Paint & Wallpaper website",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "watch": "eleventy --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
+

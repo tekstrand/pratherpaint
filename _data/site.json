@@ -1,0 +1,10 @@
+{
+  "name": "Prather Paint & Wallpaper",
+  "description": "This is the meta description",
+  "address": "101 Greenbay Road, Wilmette, IL 60091",
+  "phone": {
+    "local": "847.251.6905",
+    "tollFree": "866.570.4540"
+  }
+}
+

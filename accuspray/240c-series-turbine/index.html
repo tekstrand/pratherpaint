@@ -1,0 +1,44 @@
+---
+layout: base.html
+title: Accuspray 240C Series Turbine | Prather Paint
+description: This is the meta description
+product: 240C Series Turbine
+price: $1449.00
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/240c-series-turbine.jpg" class="pull-left" alt="Accuspray 240C Series Turbine" />
+		<p>Turbo IV "High Speed" HVLP Turbine</p>
+		<p>4-stage turbine with compressor easily adapts to mid-size projects and touch-ups.</p>
+		<p>Includes:</p>
+		<ul>
+			<li>4-Stage Turbine</li>
+			<li>10-Gun - Free Upgrade</li>
+			<li>Aluminum Air Cap <u> Free Upgrade</u></li>
+			<li>Internal Mini Compressor</li>
+			<li>2 qt. Remote Pressurized Cup </li>
+			<li>1/2-Pint Cup for touch-ups, 25' Hose to remote cup, 6' Flex-Whip, 6' Fluid Hose</li>
+			<li>Delivers 85 cfm and 7 psi at gun, 5.7" Turbine Blade, 35 lbs. unit weight</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+

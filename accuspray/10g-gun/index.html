@@ -1,0 +1,41 @@
+---
+layout: base.html
+title: Accuspray 10G Gun | Prather Paint
+description: This is the meta description
+product: 10G Gun
+price: $330.00
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/10g-gun.jpg" class="pull-left" alt="Accuspray 10G Gun" />
+		<p>The long-awaited gravity gun for use with with a turbine system! Accuspray now offers the best HVLP gun on the market with the advantages of a gravity-feed cup.</p>
+		<p>Includes:</p>
+		<ul>
+			<li>Your Choice of needle size</li>
+			<li>Your Choice of Air Cap size</li>
+			<li>Aluminum Air Cap <u> Free Upgrade</u></li>
+			<li>Stainless Steel Fluid Passage</li>
+			<li>650mL Plastic Cup Included (Not Shown)</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+

@@ -1,0 +1,40 @@
+---
+layout: base.html
+title: Accuspray 19 Gun | Prather Paint
+description: This is the meta description
+product: 19 Gun
+price: $299.99
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/19-gun.jpg" class="pull-left" alt="Accuspray 19 Gun" />
+		<p>Get award-winning AccuSpray performance in a premium all-metal body that's lightweight(20 oz.) and easy to clean. Accommodates pressure feed or one-quart cup for added versatility.</p>
+		<p>Includes:</p>
+		<ul>
+			<li>Your Choice of needle size</li>
+			<li>Your Choice of Air Cap size</li>
+			<li>Stainless Steel Fluid Passage</li>
+			<li>1/2-pint and 1-quart Cups available upon request</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+

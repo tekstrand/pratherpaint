@@ -1,0 +1,40 @@
+---
+layout: base.html
+title: Accuspray 23 Series Turbine | Prather Paint
+description: This is the meta description
+product: 23 Series Turbine
+price: $849.00
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/23-series-turbine.jpg" class="pull-left" alt="Accuspray 23 Series Turbine" />
+		<p>Portable &amp; lightweight for use with stains, sealers, urethanes, water bourne and oil base coatings.</p>
+		<p>Includes:</p>
+		<ul>
+			<li>3-Stage Turbine Unit</li>
+			<li>10-Gun <u>Free Upgrade</u>, Aluminum Air Cap <u>Free Upgrade</u></li>
+			<li>1 qt. Cup, 30 ft. Hose, 3 ft. Flex-Whip</li>
+			<li>Delivers 85 cfm and 5 psi at gun, 5.7" Turbine Blade, 18 lbs. unit weight</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+

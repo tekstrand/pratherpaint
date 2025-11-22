@@ -1,0 +1,41 @@
+---
+layout: base.html
+title: Accuspray 12S Gun | Prather Paint
+description: This is the meta description
+product: 12S Gun
+price: $255.00
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/12s-gun.jpg" class="pull-left" alt="Accuspray 12S Gun" />
+		<p>Designed to deliver the speed and simplicity of a high pressure gun, plus the performance of Accuspray's lightweight composite-body. The 12s-Gun features metal fluid passage and fittings. Features a high pressure inlet, using up to 60 psi. max inlet pressure.</p>
+		<p>Includes:</p>
+		<ul>
+			<li>Your Choice of needle size</li>
+			<li>Your Choice of Air Cap size</li>
+			<li>Aluminum Air Cap <u> Free Upgrade</u></li>
+			<li>Stainless Steel Fluid Passage</li>
+			<li>1/2-pint and 1-quart Cups available upon   		request</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+

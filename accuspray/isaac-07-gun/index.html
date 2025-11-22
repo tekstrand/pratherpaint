@@ -1,0 +1,40 @@
+---
+layout: base.html
+title: Accuspray Isaac 07 Gun | Prather Paint
+description: This is the meta description
+product: Isaac 07 Gun
+price: $330.00
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/isaac-07-gun.jpg" class="pull-left" alt="Accuspray Isaac 07 Gun" />
+		<p>The 07 produces a large fan with very soft atomization. It is a great gun for blending metallics. The 07 gun comes standard with our new cup with a twist lock lid. The gun is available with either a 600ml or 1000ml cup. Accuspray offers a variety of needle, nozzle and air cap sizes for the 07 guns to meet your application needs. </p>
+		<p><strong>Includes:</strong></p>
+		<ul>
+			<li>Your Choice of needle size</li>
+			<li>Your Choice of Air Cap size</li>
+			<li>Your Choice of 650 ml. plastic, 1000ml, 600ml, or 200ml Teflon anodized cup</li>
+			<li>Stainless Steel Fluid Passage</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+

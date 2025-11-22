@@ -1,0 +1,42 @@
+---
+layout: base.html
+title: Accuspray 230 Series Turbine | Prather Paint
+description: This is the meta description
+product: 230 Series Turbine
+price: $999.00
+---
+<h1 class="page-header">Accuspray {{ product }}</h1>
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li>Spray Equipment</li>
+	<li><a href="/accuspray/">Accuspray</a></li>
+	<li class="active">Accuspray {{ product }}</li>
+</ol>
+<div class="row">
+	{% include "accuspray-menu.html" %}
+	<div class="col-md-9 col-sm-8 accuspray">
+		<img src="/images/accuspray/230-series-turbine.jpg" class="pull-left" alt="Accuspray 230 Series Turbine" />
+		<p>The 230 handles any coating, including reduced interior and exterior latex and light bodied multi-colors.</p>
+		<p>Includes:</p>
+		<ul>
+			<li>3-Stage Heavy-Duty Turbine Unit</li>
+			<li>10-Gun - Free Upgrade</li>
+			<li>Aluminum Air Cap - Free Upgrade</li>
+			<li>1 qt. Cup, 30 ft. Hose, 3 ft. Flex-Whip</li>
+			<li>Delivers 115 cfm and 6 psi at gun</li>
+			<li>7.2" Turbine Blade, 28 lbs. unit weight</li>
+		</ul>
+		{% include "accuspray-contact.html" %}
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	$('.nav li').each(function() {
+		var menu_item = $(this).find('a').text();
+		if(menu_item === "{{ product }}") {
+			$(this).addClass('active');
+		}
+	});
+});
+</script>
+
