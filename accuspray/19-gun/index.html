@@ -7,15 +7,15 @@ price: $299.99
 ---
 <h1 class="page-header">Accuspray {{ product }}</h1>
 <ol class="breadcrumb">
-	<li><a href="/">Home</a></li>
+	<li><a href="{{ '/' | url }}">Home</a></li>
 	<li>Spray Equipment</li>
-	<li><a href="/accuspray/">Accuspray</a></li>
+	<li><a href="{{ '/accuspray/' | url }}">Accuspray</a></li>
 	<li class="active">Accuspray {{ product }}</li>
 </ol>
 <div class="row">
 	{% include "accuspray-menu.html" %}
 	<div class="col-md-9 col-sm-8 accuspray">
-		<img src="/images/accuspray/19-gun.jpg" class="pull-left" alt="Accuspray 19 Gun" />
+		<img src="{{ '/images/accuspray/19-gun.jpg' | url }}" class="pull-left" alt="Accuspray 19 Gun" />
 		<p>Get award-winning AccuSpray performance in a premium all-metal body that's lightweight(20 oz.) and easy to clean. Accommodates pressure feed or one-quart cup for added versatility.</p>
 		<p>Includes:</p>
 		<ul>

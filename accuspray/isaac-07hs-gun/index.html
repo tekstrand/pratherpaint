@@ -7,15 +7,15 @@ price: $330.00
 ---
 <h1 class="page-header">Accuspray {{ product }}</h1>
 <ol class="breadcrumb">
-	<li><a href="/">Home</a></li>
+	<li><a href="{{ '/' | url }}">Home</a></li>
 	<li>Spray Equipment</li>
-	<li><a href="/accuspray/">Accuspray</a></li>
+	<li><a href="{{ '/accuspray/' | url }}">Accuspray</a></li>
 	<li class="active">Accuspray {{ product }}</li>
 </ol>
 <div class="row">
 	{% include "accuspray-menu.html" %}
 	<div class="col-md-9 col-sm-8 accuspray">
-		<img src="/images/accuspray/isaac-07-hs-gun.jpg" class="pull-left" alt="Accuspray Isaac 07HS Gun" />
+		<img src="{{ '/images/accuspray/isaac-07-hs-gun.jpg' | url }}" class="pull-left" alt="Accuspray Isaac 07HS Gun" />
 		<p>The 07 produces a large fan with very soft atomization. It is a great gun for blending metallics. The 07 gun comes standard with our new cup with a twist lock lid. The gun is available with either a 600ml or 1000ml cup. Accuspray offers a variety of needle, nozzle and air cap sizes for the 07 guns to meet your application needs.</p>
 		<p>Includes:</p>
 		<ul>

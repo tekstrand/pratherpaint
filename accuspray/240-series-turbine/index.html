@@ -7,15 +7,15 @@ price: $1149.00
 ---
 <h1 class="page-header">Accuspray {{ product }}</h1>
 <ol class="breadcrumb">
-	<li><a href="/">Home</a></li>
+	<li><a href="{{ '/' | url }}">Home</a></li>
 	<li>Spray Equipment</li>
-	<li><a href="/accuspray/">Accuspray</a></li>
+	<li><a href="{{ '/accuspray/' | url }}">Accuspray</a></li>
 	<li class="active">Accuspray {{ product }}</li>
 </ol>
 <div class="row">
 	{% include "accuspray-menu.html" %}
 	<div class="col-md-9 col-sm-8 accuspray">
-		<img src="/images/accuspray/240-series-turbine.jpg" class="pull-left" alt="Accuspray 240 Series Turbine" />
+		<img src="{{ '/images/accuspray/240-series-turbine.jpg' | url }}" class="pull-left" alt="Accuspray 240 Series Turbine" />
 		<p>Offering increased speed over the 230, the 240 easily sprays heavier bodied, high-solid versions of all coatings.</p>
 		<p>Includes:</p>
 		<ul>

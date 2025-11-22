@@ -7,15 +7,15 @@ price: $999.00
 ---
 <h1 class="page-header">Accuspray {{ product }}</h1>
 <ol class="breadcrumb">
-	<li><a href="/">Home</a></li>
+	<li><a href="{{ '/' | url }}">Home</a></li>
 	<li>Spray Equipment</li>
-	<li><a href="/accuspray/">Accuspray</a></li>
+	<li><a href="{{ '/accuspray/' | url }}">Accuspray</a></li>
 	<li class="active">Accuspray {{ product }}</li>
 </ol>
 <div class="row">
 	{% include "accuspray-menu.html" %}
 	<div class="col-md-9 col-sm-8 accuspray">
-		<img src="/images/accuspray/230-series-turbine.jpg" class="pull-left" alt="Accuspray 230 Series Turbine" />
+		<img src="{{ '/images/accuspray/230-series-turbine.jpg' | url }}" class="pull-left" alt="Accuspray 230 Series Turbine" />
 		<p>The 230 handles any coating, including reduced interior and exterior latex and light bodied multi-colors.</p>
 		<p>Includes:</p>
 		<ul>
