@@ -4,9 +4,10 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = function(eleventyConfig) {
-  // Minify CSS during build - output directly to _site to avoid watch loops
+  // Minify CSS during build - output to both source and _site directories
   eleventyConfig.on("eleventy.before", () => {
     const cssPath = path.join(__dirname, "css", "styles.css");
+    const sourceMinPath = path.join(__dirname, "css", "styles.min.css");
     const outputDir = path.join(__dirname, "_site", "css");
     const outputPath = path.join(outputDir, "styles.min.css");
     
@@ -17,12 +18,17 @@ module.exports = function(eleventyConfig) {
       }
       
       // Only minify if source is newer or output doesn't exist
-      const shouldMinify = !fs.existsSync(outputPath) || 
+      const sourceNeedsUpdate = !fs.existsSync(sourceMinPath) || 
+        fs.statSync(cssPath).mtime > fs.statSync(sourceMinPath).mtime;
+      const outputNeedsUpdate = !fs.existsSync(outputPath) || 
         fs.statSync(cssPath).mtime > fs.statSync(outputPath).mtime;
       
-      if (shouldMinify) {
+      if (sourceNeedsUpdate || outputNeedsUpdate) {
         try {
-          execSync(`npx cleancss -o "${outputPath}" "${cssPath}"`, { stdio: "pipe" });
+          // Minify to source directory first (for reference)
+          execSync(`npx cleancss -o "${sourceMinPath}" "${cssPath}"`, { stdio: "pipe" });
+          // Then copy to output directory
+          fs.copyFileSync(sourceMinPath, outputPath);
           console.log("✓ Minified styles.css");
         } catch (error) {
           console.error("Error minifying CSS:", error);
