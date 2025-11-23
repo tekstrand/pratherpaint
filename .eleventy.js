@@ -101,6 +101,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("fonts");
+  
+  // Copy CNAME file if it exists (for custom domain)
+  eleventyConfig.addPassthroughCopy("CNAME");
 
   return {
     dir: {
