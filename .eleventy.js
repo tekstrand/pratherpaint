@@ -1,6 +1,35 @@
 const Image = require("@11ty/eleventy-img");
+const { execSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = function(eleventyConfig) {
+  // Minify CSS during build - output directly to _site to avoid watch loops
+  eleventyConfig.on("eleventy.before", () => {
+    const cssPath = path.join(__dirname, "css", "styles.css");
+    const outputDir = path.join(__dirname, "_site", "css");
+    const outputPath = path.join(outputDir, "styles.min.css");
+    
+    if (fs.existsSync(cssPath)) {
+      // Ensure output directory exists
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+      }
+      
+      // Only minify if source is newer or output doesn't exist
+      const shouldMinify = !fs.existsSync(outputPath) || 
+        fs.statSync(cssPath).mtime > fs.statSync(outputPath).mtime;
+      
+      if (shouldMinify) {
+        try {
+          execSync(`npx cleancss -o "${outputPath}" "${cssPath}"`, { stdio: "pipe" });
+          console.log("✓ Minified styles.css");
+        } catch (error) {
+          console.error("Error minifying CSS:", error);
+        }
+      }
+    }
+  });
   // Image optimization filter - use like: {{ '/images/path.jpg' | image }}
   eleventyConfig.addLiquidFilter("image", async function(imagePath) {
     if (!imagePath) return "";
